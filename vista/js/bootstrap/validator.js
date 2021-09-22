@@ -423,10 +423,13 @@ $('#buscarAuto').bootstrapValidator({
                     message : 'Ingrese una patente',
                 },
                 stringLength: {
-                    min: 7,
-                    max: 9,
-                    message: 'Se deben respetar los formatos "AAA 000" ó "AA 000 AA"'
+                    max: 7,
+                    message:'Máxino de 7 caracteres',
                 },
+                regexp: {
+                    regexp: /[A-Z]{3} [\d]{3}/,
+                    message: 'Se deben respetar los formatos "AAA 000"',
+                }   
             }
         }
     }
@@ -549,10 +552,13 @@ $('#nuevoAuto').bootstrapValidator({
                     message : 'Ingrese una patente',
                 },
                 stringLength: {
-                    min: 7,
-                    max: 9,
-                    message: 'Se deben respetar los formatos "AAA 000" ó "AA 000 AA"'
+                    max: 7,
+                    message:'Máxino de 7 caracteres',
                 },
+                regexp: {
+                    regexp: /[A-Z]{3} [\d]{3}/,
+                    message: 'Se deben respetar los formatos "AAA 000"',
+                }   
             }
         },
         marca: {
