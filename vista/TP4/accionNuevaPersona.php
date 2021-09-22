@@ -1,5 +1,5 @@
 <?php
-$Titulo = "Resultado Buscar auto";
+$Titulo = "Resultado nueva persona";
 include_once("../../vista/estructura/header.php");
 include_once("../../configuracion.php");
 
