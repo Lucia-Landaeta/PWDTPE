@@ -407,3 +407,310 @@ $('#cinemas').bootstrapValidator({
         .find('.help-block[data-bv-for="' + data.field + '"]').hide()
         .filter('[data-bv-validator="' + data.validator + '"]').show();
 });
+
+//Validacion TP4
+$('#buscarAuto').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        patente: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese una patente',
+                },
+                stringLength: {
+                    min: 7,
+                    max: 9,
+                    message: 'Se deben respetar los formatos "AAA 000" ó "AA 000 AA"'
+                },
+            }
+        }
+    }
+});
+$('#buscarPersona').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        nroDni: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese un DNI',
+                },
+                stringLength: {
+                    min: 8,
+                    max:8,
+                    message: 'El DNI debe contar con 8 dígitos'
+                },
+                digits:{
+                    message: 'Solo se aceptan números'
+                },
+            }
+        }
+    }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
+});
+
+$('#nuevaPersona').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        nroDni: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese un DNI'},
+                stringLength: {
+                    min: 8,
+                    max:8,
+                    message: 'El DNI debe contar con 8 dígitos'},
+                digits:{
+                    message: 'Solo se aceptan números'},
+            }
+        },
+        nombre:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un nombre'},
+                regexp: {
+                    regexp: /^[A-Za-zñáéíóúÑÁÉÍÓÚüÜ ]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        apellido:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un apellido'},
+                regexp: {
+                    regexp: /^[A-Za-zñáéíóúÑÁÉÍÓÚüÜ ]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        telefono:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un telefono'},
+                digits: {
+                    message: 'Solo se admiten números'}
+            }
+        },
+        domicilio: {
+            validators: {
+                notEmpty: {message : 'Debe ingresar una dirección',},
+                regexp: {
+                    regexp: /^[0-9A-Za-zñáéíóúÑÁÉÍÓÚüÜ '\-,]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        fechaNac:{
+            validators:{
+                notEmpty:{message:'Ingrese una fecha valida'}
+            }
+        }
+
+    }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
+});
+
+$('#nuevoAuto').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        patente: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese una patente',
+                },
+                stringLength: {
+                    min: 7,
+                    max: 9,
+                    message: 'Se deben respetar los formatos "AAA 000" ó "AA 000 AA"'
+                },
+            }
+        },
+        marca: {
+            validators: {
+                notEmpty: {message : 'Ingrese una marca'},
+                regexp: {
+                    regexp: /^[A-Za-zñáéíóúÑÁÉÍÓÚüÜ ]+$/,
+                    message: 'Solo se permiten letras'
+                }
+            }
+        },
+        modelo: {
+            validators: {
+                notEmpty: {message : 'Ingrese modelo'},
+                digits:{
+                    message: 'Solo números'
+                },
+                greaterThan: {
+                    value: 1895,
+                    message: "No puede ser menor a 1895"
+                },
+                lessThan: {
+                    value: 2021,
+                    message: "No puede superar 2021"
+                }
+            }
+        },
+        dniDuenio: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese un DNI'},
+                stringLength: {
+                    min: 8,
+                    max:8,
+                    message: 'El DNI debe contar con 8 dígitos'},
+                digits:{
+                    message: 'Solo se aceptan números'},
+            }
+        },
+
+    }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
+});
+
+$('#cambioDuenio').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        nroDni: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese un DNI',
+                },
+                stringLength: {
+                    min: 8,
+                    max:8,
+                    message: 'El DNI debe contar con 8 dígitos'
+                },
+                digits:{
+                    message: 'Solo se aceptan números'
+                },
+            }
+        },
+        patente: {
+            validators: {
+                notEmpty: {
+                    message : 'Ingrese una patente',
+                },
+                stringLength: {
+                    max: 7,
+                    message:'Máxino de 7 caracteres',
+                },
+                regexp: {
+                    regexp: /[A-Z]{3} [\d]{3}/,
+                    message: 'Se deben respetar los formatos "AAA 000"',
+
+                }
+                 
+            }
+        }
+    }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
+});
+
+$('#buscarPersonaAc').bootstrapValidator({
+    message: 'Este valor no es valido',
+    feedbackIcons: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation',
+        validating: 'fa fa-circle'
+    },
+    fields: {
+        nombre:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un nombre'},
+                regexp: {
+                    regexp: /^[A-Za-zñáéíóúÑÁÉÍÓÚüÜ ]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        apellido:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un apellido'},
+                regexp: {
+                    regexp: /^[A-Za-zñáéíóúÑÁÉÍÓÚüÜ ]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        telefono:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese un telefono'},
+                digits: {
+                    message: 'Solo se admiten números'}
+            }
+        },
+        domicilio: {
+            validators: {
+                notEmpty: {message : 'Debe ingresar una dirección',},
+                regexp: {
+                    regexp: /^[0-9A-Za-zñáéíóúÑÁÉÍÓÚüÜ '\-,]+$/,
+                    message: 'Se detectan caracteres invalidos'
+                }
+            }
+        },
+        fechaNac:{
+            validators:{
+                notEmpty:{message:'Ingrese una fecha'},
+                regexp: {
+                    regexp: /^\d{4}[\-\/\s]?((((0[13578])|(1[02]))[\-\/\s]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\-\/\s]?(([0-2][0-9])|(30)))|(02[\-\/\s]?[0-2][0-9]))$/,
+                    message: 'Ingrese una fecha valida <br> Respetar el formato yyyy-mm-dd'
+                }
+            },
+                        
+        }
+    }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
+});

@@ -20,18 +20,18 @@ if (isset($datos['nroDni'])) {
                 
                 <?php
                 if ($objPers != null) { ?>
-                    <form id="buscPersona" name="buscPersona" method="POST" action="actualizarDatosPersona.php" data-toggle="validator" novalidate>
+                    <form id="buscarPersonaAc" name="buscarPersonaAc" method="POST" action="actualizarDatosPersona.php" data-toggle="validator" novalidate>
                     <div class="row mb-3">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <textarea id="nombre" name="nombre" cols="25" rows="1"><?php echo $objPers->getNombre() ?></textarea><br />
+                                <textarea class="form-control" id="nombre" name="nombre" cols="25" rows="1"><?php echo $objPers->getNombre() ?></textarea><br />
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Apellido</label>
-                                <textarea id="apellido" name="apellido" cols="25" rows="1"><?php echo $objPers->getApellido() ?></textarea><br />
+                                <textarea class="form-control" id="apellido" name="apellido" cols="25" rows="1"><?php echo $objPers->getApellido() ?></textarea><br />
                             </div>
                         </div>
                     </div>
@@ -39,13 +39,13 @@ if (isset($datos['nroDni'])) {
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>DNI</label><br/>
-                                <input style="width: 200px" id="nroDni:" readonly name="nroDni" type="text" value="<?php echo $objPers->getNroDni() ?>"><br />
+                                <input class="form-control" style="width: 200px" id="nroDni:" readonly name="nroDni" type="text" value="<?php echo $objPers->getNroDni() ?>"><br />
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Teléfono</label>
-                                <textarea id="telefono" name="telefono" cols="25" rows="1"><?php echo $objPers->getTelefono() ?></textarea><br />
+                                <textarea class="form-control" id="telefono" name="telefono" cols="25" rows="1"><?php echo $objPers->getTelefono() ?></textarea><br />
                             </div>
                         </div>
                     </div>
@@ -53,13 +53,13 @@ if (isset($datos['nroDni'])) {
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Domicilio</label>
-                                <textarea id="domicilio" name="domicilio" cols="25" rows="1"><?php echo $objPers->getDomicilio() ?></textarea><br />
+                                <textarea class="form-control" id="domicilio" name="domicilio" cols="25" rows="1"><?php echo $objPers->getDomicilio() ?></textarea><br />
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Fecha Nacimiento</label>
-                                <textarea id="fechaNac" name="fechaNac" cols="25" rows="1"><?php echo $objPers->getFechaNac() ?></textarea><br />
+                                <textarea class="form-control" id="fechaNac" name="fechaNac" cols="25" rows="1"><?php echo $objPers->getFechaNac() ?></textarea><br />
                             </div>
                         </div>
                     </div>
