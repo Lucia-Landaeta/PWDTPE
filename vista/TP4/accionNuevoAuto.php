@@ -7,7 +7,7 @@ $abmA = new AbmAuto();
 $datos = data_submitted();
 $exito=false;
 if (isset($datos['dniDuenio'])) {
-    $arrP=$abmP->buscar($datos);
+    $arrP=$abmP->buscar(["nroDni"=>$datos["dniDuenio"]]);
     if(count($arrP)>0){
         $exito = $abmA->alta($datos);
     }
