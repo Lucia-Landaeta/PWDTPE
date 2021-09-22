@@ -433,7 +433,14 @@ $('#buscarAuto').bootstrapValidator({
             }
         }
     }
+})
+.on('error.validator.bv', function(e, data) {
+    data.element
+        .data('bv.messages')
+        .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+        .filter('[data-bv-validator="' + data.validator + '"]').show();
 });
+
 $('#buscarPersona').bootstrapValidator({
     message: 'Este valor no es valido',
     feedbackIcons: {
