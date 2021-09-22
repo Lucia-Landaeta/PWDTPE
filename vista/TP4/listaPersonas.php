@@ -29,7 +29,7 @@ include_once("../../configuracion.php");
                 ?>
 
                 <div>
-                <a href="AutosPersona.php"><button type="button" class="btn btn-outline-primary mt-3">AutosPersona</button></a>
+                    <a href="AutosPersona.php"><button type="button" class="btn btn-outline-primary mt-3">AutosPersona</button></a>
                 </div>
             </div>
         </div>

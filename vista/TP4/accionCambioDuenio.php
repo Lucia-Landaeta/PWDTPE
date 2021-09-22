@@ -29,14 +29,14 @@ if (isset($datos['nroDni'])) {
                 if($exito){
                     echo" El cambio de dueño se realizo con exito.";
                 }else{
-                    echo" Hubo un error";
+                    echo" Hubo un error <br>";
                     if($objPers==null){
                         echo" La persona ingresada como nuevo dueño no existe. Por favor darla de alta.";
                         echo" <a href='nuevaPersona.php'> Dar de alta dueño</a>";
                     } 
                 }
                 ?>
-                <a href="cambiarDueño.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button></a>
+                <a href="cambioDuenio.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button></a>
             </div>
         </div>
     </div>

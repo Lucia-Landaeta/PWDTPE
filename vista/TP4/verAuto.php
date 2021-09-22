@@ -8,27 +8,27 @@ include_once("../../configuracion.php");
         <div class="col-md-9">
             <div class="card border rounded shadow">
                 <?php
-                    $ambA=new AbmAuto();
-                    $abmP=new AbmPersona();
-                    $listaAutos=$ambA->buscar(null);
-                    if(count($listaAutos)>0){
-                        echo"<b>LISTA DE AUTOS</b>";
-                        foreach($listaAutos as $auto){
-                            $arrP=$abmP->buscar(["nroDni"=>$auto->getObjDuenio()->getNroDni()]);
-                            $duenio=$arrP[0];
-                            echo"<pr>
-                            <b>Patente :</b> ".$auto->getPatente()."
-                            <b>Marca :</b> ".$auto->getMarca()."
-                            <b>Modelo :</b> ".$auto->getModelo()."
+                $ambA = new AbmAuto();
+                $abmP = new AbmPersona();
+                $listaAutos = $ambA->buscar(null);
+                if (count($listaAutos) > 0) {
+                    echo "<b>LISTA DE AUTOS</b>";
+                    foreach ($listaAutos as $auto) {
+                        $arrP = $abmP->buscar(["nroDni" => $auto->getObjDuenio()->getNroDni()]);
+                        $duenio = $arrP[0];
+                        echo "<pr>
+                            <b>Patente :</b> " . $auto->getPatente() . "
+                            <b>Marca :</b> " . $auto->getMarca() . "
+                            <b>Modelo :</b> " . $auto->getModelo() . "
                             <b>Dueño :</b>
-                            <b>Nombre :</b> ".$duenio->getNombre()."
-                            <b>Apellido :</b> ".$duenio->getApellido()."
+                            <b>Nombre :</b> " . $duenio->getNombre() . "
+                            <b>Apellido :</b> " . $duenio->getApellido() . "
                             </pr>
-                            "; 
-                        }
-                    }else{
-                        echo" No hay autos cargados en la BD ";
+                            ";
                     }
+                } else {
+                    echo " No hay autos cargados en la BD ";
+                }
                 ?>
             </div>
         </div>
