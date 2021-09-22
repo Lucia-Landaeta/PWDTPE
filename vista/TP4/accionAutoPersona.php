@@ -27,8 +27,8 @@ if (isset($datos['nroDni'])) {
                             </th>
                         </tr>
                         <?php
-                        if ($objPers != null) {
-                            echo "
+                        if ($objPers != null) { ?>
+                            <!-- echo " -->
                         <tr>
                             <th scope='col'>DNI</th>
                             <th scope='col'>Nombre</th>
@@ -41,12 +41,12 @@ if (isset($datos['nroDni'])) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>" . $objPers->getNroDni() . "</td>
-                            <td>" . $objPers->getNombre() . "</td>
-                            <td>" . $objPers->getApellido() . "</td>
-                            <td>" . $objPers->getFechaNac() . "</td>
-                            <td>" . $objPers->getTelefono() . "</td>
-                            <td>" . $objPers->getDomicilio() . "</td>
+                            <td> <?php echo $objPers->getNroDni() ?> </td>
+                            <td> <?php echo $objPers->getNombre() ?> </td>
+                            <td> <?php echo $objPers->getApellido() ?> </td>
+                            <td> <?php echo $objPers->getFechaNac() ?> </td>
+                            <td> <?php echo $objPers->getTelefono() ?> </td>
+                            <td> <?php echo $objPers->getDomicilio() ?> </td>
                         </tr>
                         <tr> 
                             <th class='table-secondary text-center' colspan='6'> <h5>Información Autos</h5></th>
@@ -56,29 +56,24 @@ if (isset($datos['nroDni'])) {
                             <th scope='col' colspan='2'>Marca</th>
                             <th scope='col' colspan='1'>Modelo</th>
                         </tr>
-                        ";
+                        <?php
                             if (count($listaAutos) > 0) {
-                                foreach ($listaAutos as $objAuto) {
-                                    echo "
+                                foreach ($listaAutos as $objAuto) { ?>
                                     <tr>
-                                        <td colspan='3'>". $objAuto->getPatente()."</td>
-                                        <td colspan='2'>".$objAuto->getMarca()."</td>
-                                        <td colspan='1'>".$objAuto->getModelo()."</td>
-
+                                        <td colspan='3'> <?php echo $objAuto->getPatente() ?> </td>
+                                        <td colspan='2'> <?php echo $objAuto->getMarca() ?> </td>
+                                        <td colspan='1'> <?php echo $objAuto->getModelo() ?> </td>
                                     </tr>
-                                ";
-                                }
-                            }
-                            echo "
+                        <?php   }
+                            } ?>
+                            
                     </tbody>
-                    ";
-                        } else {
-                            echo "
+                    <?php 
+                        } else {  ?>
                             <tr>
                                 <td colspan='4' scope='col'>La persona no se encuentra cargada.</td>
                             </tr>
-                            ";
-                        }
+               <?php   }
                         ?>
                 </table>
                 <a href="autosPersona.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button></a>
