@@ -6,12 +6,12 @@ include_once("../../configuracion.php");
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="card border rounded shadow">
+            <div class="card border rounded shadow p-3">
                 <?php
                 $abmP = new AbmPersona();
                 $listaPersonas = $abmP->buscar(null);
                 if (count($listaPersonas) > 0) {
-                    echo "<b>LISTA DE DUEÑOS</b>";
+                    echo "<b>LISTA DE DUEÑOS</b><hr>";
                     foreach ($listaPersonas as $pers) {
                         echo "<pr>
                             <b>DNI :</b> " . $pers->getNroDni() . "
@@ -21,6 +21,7 @@ include_once("../../configuracion.php");
                             <b>Telefono :</b> " . $pers->getTelefono() . "
                             <b>Domicilio :</b> " . $pers->getDomicilio() . "
                             </pr>
+                            <hr>
                             ";
                     }
                 } else {
@@ -29,7 +30,7 @@ include_once("../../configuracion.php");
                 ?>
 
                 <div>
-                    <a href="AutosPersona.php"><button type="button" class="btn btn-outline-primary mt-3">AutosPersona</button></a>
+                <a href="autosPersona.php"><button type="button" class="btn btn-outline-primary mt-3">Ver autos de la persona</button></a>
                 </div>
             </div>
         </div>
