@@ -14,7 +14,8 @@ if (isset($datos['nroDni'])) {
         if (isset($datos['patente'])) {
             $arrA=$abmA->buscar($datos);
             if(count($arrA)>0){
-                $exito = $abmA->modificacion($datos);
+                $objA=$arrA[0];
+                $exito = $abmA->modificacion(["patente"=>$datos["patente"],"marca"=>$objA->getMarca(),"modelo"=>$objA->getModelo(),"dniDuenio"=>$datos["nroDni"]]);
             }  
         }
     }     
@@ -32,11 +33,10 @@ if (isset($datos['nroDni'])) {
                     if($objPers==null){
                         echo" La persona ingresada como nuevo dueño no existe. Por favor darla de alta.";
                         echo" <a href='nuevaPersona.php'> Dar de alta dueño</a>";
-                    }
-                    
+                    } 
                 }
                 ?>
-                <a href="nuevoAuto.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button></a>
+                <a href="cambiarDueño.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button></a>
             </div>
         </div>
     </div>
