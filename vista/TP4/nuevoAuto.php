@@ -7,7 +7,7 @@ include_once("../../configuracion.php");
     <div class="row">
         <div class="col-md-7">
             <div class="card border rounded shadow fw-bold p-4">
-                <form id="nuevaP" name="nuevaP" method="POST" action="accionNuevoAuto.php" data-toggle="validator" novalidate>
+                <form id="nuevoAuto" name="nuevoAuto" method="POST" action="accionNuevoAuto.php" data-toggle="validator" novalidate>
                     <div class="containerA">
                         <h5>Cargar Auto</h5>
                         <div class="row mb-3">

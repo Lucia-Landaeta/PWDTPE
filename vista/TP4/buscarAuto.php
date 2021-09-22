@@ -7,7 +7,7 @@ include_once("../../configuracion.php");
     <div class="row">
         <div class="col-md-5">
             <div class="card border rounded shadow fw-bold">
-                <form id="buscar" name="buscar" method="POST" action="accionBuscarAuto.php" data-toggle="validator" novalidate>
+                <form id="buscarAuto" name="buscarAuto" method="POST" action="accionBuscarAuto.php" data-toggle="validator" novalidate>
                     <div class="col-sm-10 ps-3 mb-3">
                         <label for="patente" class="form-label">Ingrese patente:</label>
                         <input class="form-control" type="text" id="patente" name="patente" required>

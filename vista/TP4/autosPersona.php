@@ -7,7 +7,7 @@ include_once("../../configuracion.php");
     <div class="row">
         <div class="col-md-5">
             <div class="card border rounded shadow fw-bold">
-                <form id="buscarP" name="buscarP" method="POST" action="accionAutoPersona.php" data-toggle="validator" novalidate>
+                <form id="autoPersona" name="autoPersona" method="POST" action="accionAutoPersona.php" data-toggle="validator" novalidate>
                     <div class="col-sm-10 ps-3 mb-3">
                         <label for="nroDni" class="form-label">Ingrese número de Dni:</label>
                         <input class="form-control" type="text" id="nroDni" name="nroDni" required>

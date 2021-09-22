@@ -7,7 +7,7 @@ include_once("../../configuracion.php");
     <div class="row">
         <div class="col-md-7">
             <div class="card border rounded shadow fw-bold p-4">
-                <form id="nuevaP" name="nuevaP" method="POST" action="accionNuevaPersona.php" data-toggle="validator" novalidate>
+                <form id="nuevaPersona" name="nuevaPersona" method="POST" action="accionNuevaPersona.php" data-toggle="validator" novalidate>
                     <div class="row mb-3">
                         <div class="col-sm-6">
                             <div class="form-group">
