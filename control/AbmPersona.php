@@ -19,7 +19,6 @@ class AbmPersona{
      * @return boolean
      */
     public function baja($param){
-        echo"<br>Entra a baja";
         $resp = false;
         if ($this->seteadosCamposClaves($param)){
             $objPersona = $this->cargarObjetoConClave($param);

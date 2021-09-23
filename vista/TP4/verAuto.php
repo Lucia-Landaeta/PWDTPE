@@ -2,34 +2,34 @@
 $Titulo = "Ver Autos";
 include_once("../estructura/header.php");
 include_once("../../configuracion.php");
+$ambA = new AbmAuto();
+$abmP = new AbmPersona();
+$listaAutos = $ambA->buscar(null);
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-7">
             <div class="card border rounded shadow p-3">
                 <?php
-                    $ambA=new AbmAuto();
-                    $abmP=new AbmPersona();
-                    $listaAutos=$ambA->buscar(null);
-                    if(count($listaAutos)>0){
-                        echo"<b>LISTA DE AUTOS</b><hr>";
-                        foreach($listaAutos as $auto){
-                            $arrP=$abmP->buscar(["nroDni"=>$auto->getObjDuenio()->getNroDni()]);
-                            $duenio=$arrP[0];
-                            echo"<pr>
-                            <b>Patente :</b> ".$auto->getPatente()."
-                            <b>Marca :</b> ".$auto->getMarca()."
-                            <b>Modelo :</b> ".$auto->getModelo()."
+                if (count($listaAutos) > 0) {
+                    echo "<b>LISTA DE AUTOS</b><hr>";
+                    foreach ($listaAutos as $auto) {
+                        $arrP = $abmP->buscar(["nroDni" => $auto->getObjDuenio()->getNroDni()]);
+                        $duenio = $arrP[0];
+                        echo "<pr>
+                            <b>Patente :</b> " . $auto->getPatente() . "
+                            <b>Marca :</b> " . $auto->getMarca() . "
+                            <b>Modelo :</b> " . $auto->getModelo() . "
                             <br><b>Dueño</b><br>
-                            <b>Nombre :</b> ".$duenio->getNombre()."
-                            <b>Apellido :</b> ".$duenio->getApellido()."
+                            <b>Nombre :</b> " . $duenio->getNombre() . "
+                            <b>Apellido :</b> " . $duenio->getApellido() . "
                             </pr>
                             <hr>
-                            "; 
-                        }
-                    }else{
-                        echo" No hay autos cargados en la BD ";
+                            ";
                     }
+                } else {
+                    echo " No hay autos cargados en la BD ";
+                }
                 ?>
             </div>
         </div>

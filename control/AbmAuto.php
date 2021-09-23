@@ -39,16 +39,9 @@ class AbmAuto
      */
     public function modificacion($param)
     {
-        echo"<br>Estoy en modificacion <br>";
         $resp = false;
         if ($this->seteadosCamposClaves($param)) {
-            echo"CLAVE SETEADA <br>";
             $objAuto = $this->cargarObjeto($param);
-            if($objAuto!=null){
-                echo"SE CARGO ES AUTO<br>";
-            }else{
-                echo"NO SE CARGO EL AUTO";
-            }
             if ($objAuto != null and $objAuto->modificar()) {
                 $resp = true;
             }
@@ -88,7 +81,6 @@ class AbmAuto
     {
         $obj = null;
         if (array_key_exists('patente', $param) and array_key_exists('marca', $param) and array_key_exists('modelo', $param)and array_key_exists('dniDuenio', $param)) {
-            echo"LAS KEYS EXISTEN<br>";
             $abmP = new AbmPersona();
             $arrP = ($abmP->buscar(["nroDni"=>$param["dniDuenio"]]));
             if(count($arrP) == 1){

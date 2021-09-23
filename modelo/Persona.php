@@ -228,7 +228,7 @@ class Persona
         $base = new BaseDatos();
         $resp = false;
         $sql = "DELETE FROM persona WHERE nroDni='"  . $this->getNroDni() . "'";
-        echo "<br> Consulta: " . $sql;
+        //echo "<br> Consulta: " . $sql;
         if ($base->Iniciar()) {
             if ($base->Ejecutar($sql)) {
                 $resp =  true;
@@ -281,68 +281,4 @@ class Persona
     }
 
 
-    // /**
-    //  * Recupera los datos de una funcion por su id
-    //  * @param int 
-    //  * @return true en caso de encontrar los datos, false en caso contrario 
-    //  */
-    // public function Buscar($idF)
-    // {
-    //     /**
-    //      * @var object $base
-    //      * @var string $consultaPersona
-    //      * @var boolean $resp
-    //      */
-    //     $base = new BaseDatos();
-    //     $consultaPersona = "Select * from funcion where idFuncion=" . $idF;
-    //     $resp = false;
-    //     if ($base->Iniciar()) {
-    //         if ($base->Ejecutar($consultaPersona)) {
-    //             if ($row2 = $base->Registro()) {
-    //                 $this->setIdFuncion($idF);
-    //                 $this->setNombre($row2['nombre']);
-    //                 $this->setHorarioInicio($row2['horarioInicio']);
-    //                 $this->setDuracion($row2['duracion']);
-    //                 $this->setPrecio($row2['precio']);
-    //                 $this->setCostoSala($row2['costoSala']);
-    //                 $this->setFecha($row2['fecha']);
-
-    //                 $idTeatro = $row2['idTeatro'];
-    //                 $teatro = new Teatro();
-    //                 $teatro->buscar($idTeatro);
-
-    //                 $this->setObjTeatro($teatro);
-    //                 $resp = true;
-    //             }
-    //         } else {
-    //             $this->setmensajeoperacion($base->getError());
-    //         }
-    //     } else {
-    //         $this->setmensajeoperacion($base->getError());
-    //     }
-    //     return $resp;
-    // }
-    // /**
-    //  * Retorna un string con la informacion de una funcion
-    //  * @return string
-    //  */
-    // public function __toString(){
-    //     /**
-    //      * @var int $inicioHs
-    //      * @var int $inicioMint
-    //      * @var int $duracionMint
-    //      */
-    //     $inicioHs = intdiv(intval($this->getHorarioInicio()), 3600);
-    //     $inicioMint = intdiv((intval($this->getHorarioInicio()) % 3600), 60);
-    //     $duracionMint = intdiv(intval($this->getDuracion()), 60);
-
-    //     return "ID Funcion: " . $this->getIdFuncion() . "\n" .
-    //         "Nombre: " . $this->getNombre() . "\n" .
-    //         "Fecha: " . $this->getFecha() . "\n" .
-    //         "Horario de inicio: " . $inicioHs . ":" . $inicioMint . "\n" .
-    //         "Duracion de funcion: " . $duracionMint . " minutos" . "\n" .
-    //         "Precio: $" . $this->getPrecio() . "\n" .
-    //         "Costo sala: $" . $this->getCostoSala() . "\n" .
-    //         "Teatro al que pertenece: " . $this->getObjTeatro()->getnombre() . "\n";
-    // }
 }
