@@ -72,7 +72,7 @@ if (isset($datos['nroDni'])) {
                 </form>
                 <?php
                 } else {
-                    echo"EAEAEAE";
+                    echo"La persona ingresada no se encontro";
                 }
                 ?>
                 <a href="buscarPersona.php"><button type="button" class="btn btn-outline-primary mt-3">Volver</button>

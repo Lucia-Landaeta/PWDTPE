@@ -10,7 +10,7 @@ include_once("../../configuracion.php");
                 <form id="buscarAuto" name="buscarAuto" method="POST" action="accionBuscarAuto.php" data-toggle="validator" novalidate>
                     <div class="col-sm-10 ps-3 mb-3">
                         <label for="patente" class="form-label">Ingrese patente:</label>
-                        <input class="form-control" type="text" id="patente" name="patente" required>
+                        <input class="form-control" type="text" id="patente" name="patente" required placeholder="AAA 000">
                     </div>
                     <div class="col-sm-10 ps-3">
                         <button class="btn btn-primary mb-3" type="submit">Enviar</button>
